@@ -21,7 +21,7 @@ let listArray = []
 
 // Drag Functionality
 let draggedItem
-
+let currentColumn
 // Get Arrays from localStorage if available, set default values if not
 function getSavedColumns() {
   if (localStorage.getItem('backlogItems')) {
@@ -113,11 +113,19 @@ function allowDrop(e) {
 function dragEnter(column) {
   console.log(listColums[column])
   listColums[column].classList.add('over')
+  currentColumn = column
 }
 
 //Dropping Item in Column
 function drop(e) {
   e.preventDefault()
+  //Remove Bgc/padding
+  listColums.forEach((column) => {
+    column.classList.remove('over')
+  })
+  //Add Item to Column
+  const parent = listColums[currentColumn]
+  parent.appendChild(draggedItem)
 }
 
 //On Load
