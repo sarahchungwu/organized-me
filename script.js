@@ -17,7 +17,7 @@ let backlogListArray = []
 let progressListArray = []
 let completeListArray = []
 let onHoldListArray = []
-let listArray = []
+let listArrays = []
 
 // Drag Functionality
 let draggedItem
@@ -39,7 +39,7 @@ function getSavedColumns() {
 
 // Set localStorage Arrays
 function updateSavedColumns() {
-  listArray = [
+  listArrays = [
     backlogListArray,
     progressListArray,
     completeListArray,
@@ -48,22 +48,21 @@ function updateSavedColumns() {
 
   const arrayNames = ['backlog', 'progress', 'complete', 'onHold']
   arrayNames.forEach((arrayName, index) => {
-    localStorage.setItem(`${arrayName}Items`, JSON.stringify(listArray[index]))
+    localStorage.setItem(`${arrayName}Items`, JSON.stringify(listArrays[index]))
   })
 }
 
 // Create DOM Elements for each list item
 function createItemEl(columnEl, column, item, index) {
-  // console.log('columnEl:', columnEl)
-  // console.log('column:', column)
-  // console.log('item:', item)
-  // console.log('index:', index)
   // List Item
   const listEl = document.createElement('li')
   listEl.classList.add('drag-item')
   listEl.textContent = item
   listEl.draggable = true
   listEl.setAttribute('ondragstart', 'drag(event)')
+  listEl.contentEditable = true
+  listEl.id = index
+  listEl.setAttribute('onfocusout', `updateItem(${index}, ${column})`)
   //Append
   columnEl.appendChild(listEl)
 }
@@ -83,27 +82,35 @@ function updateDOM() {
   // Progress Column
   progressList.textContent = ''
   progressListArray.forEach((progressItem, index) => {
-    createItemEl(progressList, 0, progressItem, index)
+    createItemEl(progressList, 1, progressItem, index)
   })
   // Complete Column
   completeList.textContent = ''
   completeListArray.forEach((completeItem, index) => {
-    createItemEl(completeList, 0, completeItem, index)
+    createItemEl(completeList, 2, completeItem, index)
   })
   // On Hold Column
   onHoldList.textContent = ''
   onHoldListArray.forEach((onHoldItem, index) => {
-    createItemEl(onHoldList, 0, onHoldItem, index)
+    createItemEl(onHoldList, 3, onHoldItem, index)
   })
   // Run getSavedColumns only once, Update Local Storage
   updatedOnLoad = true
   updateSavedColumns()
 }
 
+//Update Item - Delete if necessary, or update Array value
+function updateItem(id, column) {
+  const selectedArray = listArrays[column]
+  console.log(selectedArray)
+  const selectedColumnEl = listColums[column].children
+  console.log(selectedColumnEl[id].textContent)
+}
+
 // Add to Column List, Reset TextBoxt
 function addToColumn(column) {
   const itemText = addItems[column].textContent
-  const selectedArray = listArray[column]
+  const selectedArray = listArrays[column]
   selectedArray.push(itemText)
   addItems[column].textContent = ''
   updateDOM()
