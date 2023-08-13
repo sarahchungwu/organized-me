@@ -112,6 +112,7 @@ function allowDrop(e) {
 //When Item Enters Column Area
 function dragEnter(column) {
   console.log(listColums[column])
+  listColums[column].classList.add('over')
 }
 
 //Dropping Item in Column
