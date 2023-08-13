@@ -105,6 +105,7 @@ function addToColumn(column) {
   const itemText = addItems[column].textContent
   const selectedArray = listArray[column]
   selectedArray.push(itemText)
+  addItems[column].textContent = ''
   updateDOM()
 }
 
