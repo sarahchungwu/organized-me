@@ -202,5 +202,22 @@ function drop(e) {
   rebuildArrays()
 }
 
+function resetTasks() {
+  // Set all task arrays to empty arrays
+  backlogListArray = []
+  progressListArray = []
+  completeListArray = []
+  onHoldListArray = []
+
+  // Update the DOM
+  updateDOM()
+
+  // Optionally, clear the tasks from localStorage
+  localStorage.removeItem('backlogItems')
+  localStorage.removeItem('progressItems')
+  localStorage.removeItem('completeItems')
+  localStorage.removeItem('onHoldItems')
+}
+
 //On Load
 updateDOM()
