@@ -226,14 +226,15 @@ ul {
   color: white;
   padding: 15px 30px;
   border-radius: 20px;
-  font-size: 1.2rem;
+  font-size: 1rem;
   cursor: pointer;
   position: relative;
   font-family: 'Comic Sans MS', cursive;
   bottom: 20px; 
   left: 50%;
   transform: translateX(-50%);
-  box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1);
+  margin-top: 30px;
 }
 
 
