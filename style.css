@@ -19,14 +19,14 @@ body {
   background-attachment: fixed;
   color: white;
   font-family: Quicksand, sans-serif;
-  overflow-y: hidden;
+  overflow-y: auto;
   height: 100vh;
 }
 
 h1 {
   letter-spacing: 2px;
   text-shadow: 2px 2px 5px rgb(85, 85, 85);
-  font-family: 'Comic Sans MS', cursive; /* Change to a cute font */
+  font-family: 'Comic Sans MS', cursive; 
 }
 
 /* Style for the main title */
@@ -57,7 +57,7 @@ ul {
   flex:1;
   margin: 0 10px;
   position: relative;
-  background-color: rgba(150, 130, 130, 0.4);
+  background-color: rgba(138, 115, 110, 0.8);
   border-radius: 10px;
   overflow-x: hidden;
 }
@@ -110,7 +110,7 @@ ul {
 .custom-scroll::-webkit-scrollbar-thumb {
   border-radius: 10px;
   box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: rgba(76, 73, 69, 0.7);
 }
 
 .header {
@@ -137,7 +137,7 @@ ul {
   margin: 10px;
   padding: 10px;
   height: fit-content;
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: rgba(76, 73, 69, 0.7);
   border-radius: 10px;
   line-height: 1.5rem;
   letter-spacing: 1px;
@@ -217,6 +217,28 @@ ul {
 
 .add-item:focus {
   outline: none;
+}
+
+.reset-btn {
+  background-color:#e56248;
+  border: none;
+  color: white;
+  padding: 15px 30px;
+  border-radius: 20px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  position: relative;
+  font-family: 'Comic Sans MS', cursive;
+  bottom: 20px; 
+  left: 50%;
+  transform: translateX(-50%);
+  box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+
+.reset-btn:hover {
+  background-color: #cd4f38
+   
 }
 
 /* Media Query: Laptop */
