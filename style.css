@@ -5,31 +5,36 @@ html {
 }
 
 :root {
-  --column-1: #a2622d;
-  --column-2: #1b6161;
-  --column-3: #248224;
-  --column-4: #a22d22;
+  --column-1: #a26559;
+  --column-2: #5c7fa1;
+  --column-3: #556e43;
+  --column-4: #b44134;
 }
 
 body {
   margin: 0;
-  background: url("./trees.jpg");
+  background: url("./bg.jpg");
   background-size: cover;
   background-position: 50% 60%;
   background-attachment: fixed;
   color: white;
   font-family: Quicksand, sans-serif;
   overflow-y: hidden;
+  height: 100vh;
 }
 
 h1 {
   letter-spacing: 2px;
-  text-shadow: 2px 2px 5px black;
+  text-shadow: 2px 2px 5px rgb(85, 85, 85);
+  font-family: 'Comic Sans MS', cursive; /* Change to a cute font */
 }
 
+/* Style for the main title */
 .main-title {
+
   text-align: center;
   font-size: 3rem;
+  color: #e56248; /* Change the font color to a cute color */
 }
 
 ul {
@@ -52,7 +57,7 @@ ul {
   flex:1;
   margin: 0 10px;
   position: relative;
-  background-color: rgba(0, 0, 0, 0.4);
+  background-color: rgba(150, 130, 130, 0.4);
   border-radius: 10px;
   overflow-x: hidden;
 }
@@ -217,7 +222,7 @@ ul {
 /* Media Query: Laptop */
 @media screen and (max-width: 1800px) {
   .main-title {
-    font-size: 2rem;
+    font-size: 3rem;
   }
 }
 
@@ -227,6 +232,9 @@ ul {
     overflow-y: auto;
   }
 
+  .main-title {
+    font-size: 2rem;
+  }
   .drag-container {
     margin: 0;
   }
