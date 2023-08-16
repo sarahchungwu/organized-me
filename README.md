@@ -1,7 +1,7 @@
 # organized-me
 
 ## Overview
-Organize Me is a task management tool built with plain JavaScript, styled to function similarly to Trello. It's a single-page application that allows users to add tasks and drag them between different status boards, providing a simple and effective way to manage various tasks in daily life
+Organize Me is a task management tool built with plain JavaScript, styled to function similarly to Trello. It's a single-page application that allows users to add tasks and drag them between different status boards, providing a simple and effective way to manage various tasks in daily life. 
 
 ## Technologies Used
 - JavaScript
@@ -40,6 +40,8 @@ Note: **\`localStorage\`** can only store string values. When you want to save a
 3. **Drop Zones**: Drop zones are designated areas where draggable elements can be released. The dragover event is used to define valid drop zones.
 
 ## Learning 
+
+This project is a powerful learning experience to enhance my understanding of JavaScript concepts and application development.
 
 ### 1. Using Local Storage in JavaScript
 
