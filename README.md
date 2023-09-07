@@ -28,7 +28,7 @@ Organize Me is a task management tool built with plain JavaScript, styled to fun
 2. **updateSavedColumns() Function**:
     - This function updates the data in **\`localStorage\`** using **\`setItem()\`**, by converting the arrays into JSON strings.
 3. **createItemEl Function**:
-    - This function is creating a new DOM element (the code snippet provided doesn't show what's being done with this element).
+    - This function is creating a new DOM element
 
 Note: **\`localStorage\`** can only store string values. When you want to save an array or an object, you need to convert it into a string using \`JSON.stringify\`.
 
